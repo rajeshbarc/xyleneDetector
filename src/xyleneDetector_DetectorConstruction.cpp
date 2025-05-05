@@ -59,7 +59,7 @@ G4VPhysicalVolume* xyleneDetector_DetectorConstruction::Construct() {
     G4Tubs* solidBottom = new G4Tubs("Bottom", 0, outerRadius, thickness/2, 0, 360*deg);
     G4LogicalVolume* logicBottom = new G4LogicalVolume(solidBottom, aluminum, "Bottom");
     logicBottom->SetVisAttributes(aluminumVisAtt);
-    new G4PVPlacement(0, G4ThreeVector(0, 0, -outerHeight/2 + thickness/2), logicBottom, "Bottom", logicWorld, false, 0, true);
+    new G4PVPlacement(0, G4ThreeVector(0, 0, -outerHeight/2 - thickness/2), logicBottom, "Bottom", logicWorld, false, 0, true);
 
     // 3.  Inner volume for xylene (inner: 12.1cm diameter, 4.78cm height due to bottom)
     G4double innerHeight = outerHeight - thickness; // 4.78 cm
@@ -68,7 +68,7 @@ G4VPhysicalVolume* xyleneDetector_DetectorConstruction::Construct() {
     // Set xylene color (yellow, slightly transparent)
     G4VisAttributes* xyleneVisAtt = new G4VisAttributes(G4Colour(1.0, 1.0, 0.0, 0.8)); // RGB: yellow, 80% opaque
     logicXylene->SetVisAttributes(xyleneVisAtt);
-    new G4PVPlacement(0, G4ThreeVector(0, 0, -outerHeight/2 + thickness + innerHeight/2), logicXylene, "Xylene", logicWorld, false, 0, true);
+    new G4PVPlacement(0, G4ThreeVector(0, 0, -outerHeight/2 + innerHeight/2), logicXylene, "Xylene", logicWorld, false, 0, true);
 
     // 4. Glass Window (1mm thick, same diameter as inner volume)
     G4double glassThickness = 0.1 * cm; // 1mm
@@ -78,8 +78,8 @@ G4VPhysicalVolume* xyleneDetector_DetectorConstruction::Construct() {
     G4VisAttributes* glassVisAtt = new G4VisAttributes(G4Colour(0.0, 0.5, 1.0, 0.2)); // RGB: light blue, 20% opaque
     glassVisAtt->SetForceSolid(true); // Ensures glass is drawn as a solid surface
     logicGlass->SetVisAttributes(glassVisAtt);
-    new G4PVPlacement(0, G4ThreeVector(0, 0, outerHeight/2 - glassThickness/2), logicGlass, "Glass", logicWorld, false, 0, true);
-
+    //new G4PVPlacement(0, G4ThreeVector(0, 0, outerHeight/2 - glassThickness/2), logicGlass, "Glass", logicWorld, false, 0, true);
+    new G4PVPlacement(0, G4ThreeVector(0, 0, outerHeight/2 + glassThickness/2), logicGlass, "Glass", logicWorld, false, 0, true);
     // Logic to Attach sensitive detector to a logical volume
     // Uncomment and adjust as needed, e.g., attach to glass or xylene
     // neutronDetector_SensitiveDetector* detector = new neutronDetector_SensitiveDetector("SensitiveDetector");
