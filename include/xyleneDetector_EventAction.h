@@ -9,6 +9,10 @@ public:
     virtual ~xyleneDetector_EventAction();
     virtual void BeginOfEventAction(const G4Event *event);
     virtual void EndOfEventAction(const G4Event *event);
+
+    void AddEnergy(double val);
+private:
+    G4double totalEnergyDeposited;
 };
 
 #endif

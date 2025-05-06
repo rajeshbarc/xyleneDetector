@@ -5,6 +5,7 @@ class G4Run;
 
 #include "G4UserRunAction.hh"
 #include "G4Event.hh"
+#include "G4AnalysisManager.hh"
 class xyleneDetector_RunAction : public G4UserRunAction {
 public:
     xyleneDetector_RunAction();
