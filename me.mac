@@ -1,0 +1,5 @@
+/gun/particle neutron
+/gun/energy 4 MeV
+/gun/position 0 0 25 cm
+/gun/direction 0 0 -1 
+/run/beamOn 100000

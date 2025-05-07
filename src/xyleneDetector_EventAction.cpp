@@ -27,7 +27,7 @@ void xyleneDetector_EventAction::EndOfEventAction(const G4Event *event){
   if (totalEnergyDeposited > 0) {
     
     analMan->FillNtupleDColumn(0, 0, totalEnergyDeposited);
-    analMan->AddNtupleRow();  //check
+    analMan->AddNtupleRow(0);  //check
 
 }
 }
