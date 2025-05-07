@@ -1,0 +1,6 @@
+/gun/particle neutron
+/gun/energy 2 MeV
+/gun/position 0 0 -40 cm
+/gun/direction 0 0 1
+/run/initialize 
+/run/beamOn 10000
