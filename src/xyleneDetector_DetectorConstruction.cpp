@@ -75,7 +75,7 @@ G4VPhysicalVolume* xyleneDetector_DetectorConstruction::Construct() {
     G4Tubs* solidGlass = new G4Tubs("Glass", 0, innerRadius, glassThickness/2, 0, 360*deg);
     G4LogicalVolume* logicGlass = new G4LogicalVolume(solidGlass, glass, "Glass");
         // Set glass color (light blue, transparent)
-    G4VisAttributes* glassVisAtt = new G4VisAttributes(G4Colour(0.0, 0.5, 1.0, 0.2)); // RGB: light blue, 20% opaque
+    G4VisAttributes* glassVisAtt = new G4VisAttributes(G4Colour(1.0, 0.5, 1.0, 0.2)); // RGB: light blue, 20% opaque
     glassVisAtt->SetForceSolid(true); // Ensures glass is drawn as a solid surface
     logicGlass->SetVisAttributes(glassVisAtt);
     //new G4PVPlacement(0, G4ThreeVector(0, 0, outerHeight/2 - glassThickness/2), logicGlass, "Glass", logicWorld, false, 0, true);

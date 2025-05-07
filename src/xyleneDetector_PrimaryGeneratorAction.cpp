@@ -10,8 +10,9 @@ xyleneDetector_PrimaryGeneratorAction::xyleneDetector_PrimaryGeneratorAction() {
     //Default we have setup geantino particles
     G4ParticleDefinition* particle = G4ParticleTable::GetParticleTable()->FindParticle("neutron");
     fParticleGun->SetParticleDefinition(particle);
-    fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0., 0., -1.));
-    fParticleGun->SetParticleEnergy(4.0 * MeV);
+    fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0., 0., 1.));
+    fParticleGun->SetParticleEnergy(1.0 * MeV);
+    fParticleGun->SetParticlePosition(G4ThreeVector(0.,0., -40*cm));
     
     
     // TODO : Add your desired particles

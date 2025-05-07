@@ -27,11 +27,11 @@ void xyleneDetector_SteppingAction::UserSteppingAction(const G4Step* step) {
   double edep = step->GetTotalEnergyDeposit();
 
   if (volumeName == "Xylene") {
-    std::cout << "TrackID : " << trackID << "\t ParticleName : " << particleName << "\t VolumeName : " << volumeName
-              << "\t Energy Deposited : " << edep << std::endl;
+    //std::cout << "TrackID : " << trackID << "\t ParticleName : " << particleName << "\t VolumeName : " << volumeName
+    //          << "\t Energy Deposited : " << edep << std::endl;
             
       myEvAction->AddEnergy(edep);
-      std:: cout<<"Wrote "<<edep<< std::endl;
+      //std:: cout<<"Wrote "<<edep<< std::endl;
 
 
 }
