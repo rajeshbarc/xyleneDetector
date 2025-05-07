@@ -14,6 +14,7 @@ void xyleneDetector_EventAction::BeginOfEventAction(const G4Event *event){
 
 void xyleneDetector_EventAction::AddEnergy(double val)
 {
+    std::cout<<"Energy added";
     totalEnergyDeposited+=val;
 }
 

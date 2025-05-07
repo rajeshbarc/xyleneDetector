@@ -7,6 +7,7 @@
 #include "xyleneDetector_DetectorConstruction.h"
 #include "xyleneDetector_PrimaryGeneratorAction.h"
 #include "xyleneDetector_SteppingAction.h"
+#include "xyleneDetector_EventAction.h"
 
 int main(int argc, char** argv) {
     G4UIExecutive* ui = nullptr;
@@ -18,6 +19,7 @@ int main(int argc, char** argv) {
     runManager->SetUserInitialization(new xyleneDetector_DetectorConstruction());
     runManager->SetUserInitialization(new QGSP_BERT);
     runManager->SetUserAction(new xyleneDetector_PrimaryGeneratorAction());
+    runManager->SetUserAction(new xyleneDetector_EventAction());
     runManager->SetUserAction(new xyleneDetector_SteppingAction());
 
     G4VisManager* visManager = new G4VisExecutive();
