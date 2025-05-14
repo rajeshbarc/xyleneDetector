@@ -11,6 +11,7 @@ void xyleneDetector_RunAction::BeginOfRunAction(const G4Run*){
     analMan->OpenFile("output.root");
     analMan->CreateNtuple("fEnergyTree", "A simple tree for Xylene Data");
     analMan->CreateNtupleDColumn("eDep");
+    analMan->CreateNtupleDColumn("eDepResolution");
     analMan->FinishNtuple();
 
 }
